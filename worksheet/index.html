@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한살이 농장 활동지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #fffef9; --grid: rgba(76, 140, 95, .13); --ink: #2d3a2c; --soft: #5d6a59; --kale: #3e8a57; --butter: #f6cf5a; --line: #b9c2b3; --sky: #e4f3fa; --display: 'Gaegu', 'Gowun Dodum', 'Malgun Gothic', sans-serif; --body: 'Gowun Dodum', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e9ecdf; color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 1.55; }
+  .bar { position: sticky; top: 0; z-index: 5; display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 10px 16px; background: rgba(233, 236, 223, .95); border-bottom: 1px solid var(--line); }
+  .bar a, .bar button { font-family: var(--display); font-weight: 700; font-size: 19px; border: 2px solid var(--ink); border-radius: 999px; padding: 4px 16px; background: #fff; color: var(--ink); text-decoration: none; cursor: pointer; box-shadow: 0 3px 0 var(--ink); }
+  .bar button { background: var(--butter); }
+  .page { width: 210mm; min-height: 297mm; margin: 14px auto; padding: 14mm 14mm 12mm; background-color: var(--paper); background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 5mm 5mm; box-shadow: 0 6px 24px rgba(0, 0, 0, .12); position: relative; }
+  @media screen and (max-width: 820px) { .page { width: 100%; min-height: 0; padding: 18px 16px; } }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; border-bottom: 3px solid var(--ink); padding-bottom: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+  .head h1 { font-family: var(--display); font-size: 30px; margin: 0; line-height: 1.1; }
+  .head .k { font-family: var(--display); font-weight: 700; color: var(--kale); font-size: 16px; }
+  .who { display: flex; gap: 10px; font-size: 13px; }
+  .who span { border-bottom: 1.5px solid var(--ink); min-width: 70px; padding: 0 4px; display: inline-block; }
+  .std { font-size: 12px; color: var(--soft); margin: 0 0 8px; }
+  h2 { font-family: var(--display); font-size: 21px; margin: 12px 0 6px; }
+  h2 i { font-style: normal; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--kale); color: #fff; font-size: 15px; margin-right: 6px; }
+  table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, .85); }
+  th, td { border: 1.5px solid var(--ink); padding: 5px 7px; vertical-align: top; text-align: left; }
+  th { background: #eef3e6; font-weight: 700; }
+  .obs td.pic { height: 34mm; width: 42mm; }
+  .obs td.pic small { color: var(--soft); }
+  .lines { display: grid; gap: 4px; }
+  .lines span { border-bottom: 1px dashed var(--line); min-height: 20px; display: block; font-size: 12.5px; color: var(--soft); }
+  .tip { background: var(--sky); border: 1.5px dashed #7fb9d3; border-radius: 10px; padding: 6px 10px; font-size: 12.5px; margin: 6px 0; }
+  .check { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 10px; font-size: 13px; }
+  .check label::before { content: '□ '; }
+  .cycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .cycle div { border: 1.5px solid var(--ink); border-radius: 12px; background: #fff; min-height: 42mm; padding: 6px; position: relative; font-size: 12px; color: var(--soft); }
+  .cycle div::after { content: '→'; position: absolute; right: -10px; top: 40%; font-weight: 700; color: var(--ink); }
+  .cycle div:last-child::after { content: '↺'; }
+  .self td { font-size: 13px; }
+  .self td.s { width: 26mm; text-align: center; color: var(--soft); }
+  .foot { position: absolute; left: 14mm; right: 14mm; bottom: 7mm; display: flex; justify-content: space-between; font-size: 11px; color: var(--soft); }
+  @media screen and (max-width: 820px) { .foot { position: static; margin-top: 12px; } .cycle { grid-template-columns: repeat(2, 1fr); } .check { grid-template-columns: repeat(2, 1fr); } }
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; }
+    .bar { display: none; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="../index.html">← 게임으로</a>
+  <button type="button" id="print">인쇄하기 (A4 3쪽)</button>
+  <a href="../guide/index.html">제작 가이드</a>
+</div>
+
+<!-- 1쪽: 관찰 기록장 -->
+<section class="page">
+  <div class="head">
+    <div><div class="k">꼬물꼬물 한살이 농장 · 활동지 ①</div><h1>배추흰나비 관찰 기록장</h1></div>
+    <div class="who">3학년 <span></span>반 <span></span>번 이름 <span style="min-width:90px"></span></div>
+  </div>
+  <p class="std">[4과04-01] 동물의 한살이를 직접 관찰하고, 관찰한 내용을 글과 그림으로 표현할 수 있다.</p>
+  <div class="tip">돋보기로 자세히 보고 <b>모양 · 색깔 · 크기 · 움직임</b>을 써요. 크기는 자로 재어 mm로 적어요. 알이나 애벌레는 손으로 만지지 않아요!</div>
+  <table class="obs">
+    <thead><tr><th style="width:24mm">날짜·단계</th><th>그림</th><th>관찰한 내용</th></tr></thead>
+    <tbody>
+      <tr><td>　월　일<br><b>알</b></td><td class="pic"><small>돋보기로 본 모습</small></td><td><div class="lines"><span>모양:</span><span>색깔:</span><span>크기:</span><span>움직임:</span></div></td></tr>
+      <tr><td>　월　일<br><b>갓 나온 애벌레</b></td><td class="pic"></td><td><div class="lines"><span>모양:</span><span>색깔:</span><span>크기:</span><span>하는 일:</span></div></td></tr>
+      <tr><td>　월　일<br><b>자란 애벌레</b></td><td class="pic"></td><td><div class="lines"><span>모양:</span><span>색깔:</span><span>크기(자로 잰 길이):　　　mm</span><span>움직임:</span></div></td></tr>
+      <tr><td>　월　일<br><b>번데기</b></td><td class="pic"></td><td><div class="lines"><span>모양:</span><span>색깔:</span><span>크기:</span><span>움직임:</span></div></td></tr>
+      <tr><td>　월　일<br><b>어른벌레</b></td><td class="pic"></td><td><div class="lines"><span>몸(머리·가슴·배):</span><span>다리와 날개:</span><span>생김새:</span><span>먹이·움직임:</span></div></td></tr>
+    </tbody>
+  </table>
+  <h2><i>✎</i>새롭게 알게 된 점 · 궁금한 점</h2>
+  <div class="lines"><span></span><span></span><span></span></div>
+  <div class="foot"><span>꼬물꼬물 한살이 농장</span><span>1 / 3</span></div>
+</section>
+
+<!-- 2쪽: 실험 설계지 -->
+<section class="page">
+  <div class="head">
+    <div><div class="k">꼬물꼬물 한살이 농장 · 활동지 ②</div><h1>식물이 자라는 조건 실험 설계지</h1></div>
+    <div class="who">이름 <span style="min-width:110px"></span></div>
+  </div>
+  <p class="std">[4과04-02] 식물이 자라는 데 필요한 조건을 찾는 실험을 설계하여 수행할 수 있다.</p>
+  <h2><i>1</i>씨가 싹 트는 조건 (무씨 실험)</h2>
+  <table>
+    <tr><th style="width:30mm">알아볼 것</th><td>씨가 싹 트려면 （　　　　　　　）이(가) 필요할까?</td></tr>
+    <tr><th>다르게 할 조건</th><td></td></tr>
+    <tr><th>같게 할 조건</th><td></td></tr>
+    <tr><th>예상</th><td></td></tr>
+    <tr><th>결과</th><td></td></tr>
+    <tr><th>결론</th><td>씨가 싹 트려면 （　　　　　）과(와) （　　　　　　　）이(가) 필요하다.</td></tr>
+  </table>
+  <h2><i>2</i>식물이 자라는 조건 (케일 화분 실험)</h2>
+  <p style="margin:0 0 4px">내가 알아볼 조건에 ○ 하세요: <b>물의 양</b> · <b>햇빛의 양</b></p>
+  <div class="check" style="margin:4px 0 8px"><label>물의 양</label><label>햇빛의 양</label><label>온도(놓는 곳)</label><label>흙의 종류와 양</label><label>식물의 종류와 크기</label><label>화분 크기</label></div>
+  <p class="std" style="margin-bottom:6px">위에서 다르게 할 조건 하나에 ○, 같게 할 조건에는 모두 ✓ 해요.</p>
+  <table>
+    <thead><tr><th style="width:20mm">날짜</th><th>화분 A (　　　　　　　　)</th><th>화분 B (　　　　　　　　)</th></tr></thead>
+    <tbody>
+      <tr><td>시작</td><td>잎:　　　　줄기:　　　　키:　　cm</td><td>잎:　　　　줄기:　　　　키:　　cm</td></tr>
+      <tr><td>　일째</td><td>잎:　　　　줄기:　　　　키:　　cm</td><td>잎:　　　　줄기:　　　　키:　　cm</td></tr>
+      <tr><td>　일째</td><td>잎:　　　　줄기:　　　　키:　　cm</td><td>잎:　　　　줄기:　　　　키:　　cm</td></tr>
+      <tr><td>　일째</td><td>잎:　　　　줄기:　　　　키:　　cm</td><td>잎:　　　　줄기:　　　　키:　　cm</td></tr>
+    </tbody>
+  </table>
+  <h2><i>3</i>결론</h2>
+  <div class="lines"><span>식물이 잘 자라려면</span><span></span></div>
+  <div class="tip">실험이 끝난 식물에게 다시 물과 햇빛을 주며 소중히 돌봐요.</div>
+  <div class="foot"><span>꼬물꼬물 한살이 농장</span><span>2 / 3</span></div>
+</section>
+
+<!-- 3쪽: 한살이 소개 카드 + 자기 평가 -->
+<section class="page">
+  <div class="head">
+    <div><div class="k">꼬물꼬물 한살이 농장 · 활동지 ③</div><h1>한살이 소개 카드</h1></div>
+    <div class="who">이름 <span style="min-width:110px"></span></div>
+  </div>
+  <p class="std">[4과04-03] 생물의 한살이 과정을 조사하여 생물에 따라 한살이의 유형이 다양함을 소개하는 자료를 만들어 공유할 수 있다.</p>
+  <table>
+    <tr><th style="width:30mm">소개할 생물</th><td></td><th style="width:22mm">카드 제목</th><td></td></tr>
+    <tr><th>한살이 유형</th><td colspan="3"><div class="check" style="grid-template-columns:repeat(4,1fr)"><label>알을 낳는 동물</label><label>새끼를 낳는 동물</label><label>한해살이식물</label><label>여러해살이식물</label></div></td></tr>
+  </table>
+  <h2><i>1</i>한살이 단계를 그림과 글로</h2>
+  <div class="cycle"><div>①</div><div>②</div><div>③</div><div>④</div></div>
+  <h2><i>2</i>조사하며 새롭게 알게 된 점</h2>
+  <div class="lines"><span></span><span></span></div>
+  <h2><i>3</i>친구의 카드에서 배운 점</h2>
+  <div class="lines"><span>친구 이름:　　　　　　　생물:</span><span></span></div>
+  <h2><i>★</i>스스로 평가</h2>
+  <table class="self">
+    <thead><tr><th>나는 이렇게 할 수 있어요</th><th class="s">잘함</th><th class="s">보통</th><th class="s">노력</th></tr></thead>
+    <tbody>
+      <tr><td>배추흰나비의 한살이를 관찰하고 글과 그림으로 기록할 수 있다.</td><td class="s">○</td><td class="s">○</td><td class="s">○</td></tr>
+      <tr><td>다르게 할 조건과 같게 할 조건을 구분하여 실험을 설계할 수 있다.</td><td class="s">○</td><td class="s">○</td><td class="s">○</td></tr>
+      <tr><td>생물에 따라 한살이 유형이 다양함을 소개할 수 있다.</td><td class="s">○</td><td class="s">○</td><td class="s">○</td></tr>
+      <tr><td>생물을 소중히 여기며 끝까지 책임감 있게 돌볼 수 있다.</td><td class="s">○</td><td class="s">○</td><td class="s">○</td></tr>
+    </tbody>
+  </table>
+  <div class="foot"><span>꼬물꼬물 한살이 농장</span><span>3 / 3</span></div>
+</section>
+<script>
+  document.getElementById('print').addEventListener('click', function () { window.print(); });
+</script>
+</body>
+</html>

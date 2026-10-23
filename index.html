@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>꼬물꼬물 한살이 농장</title>
+<meta name="description" content="초등 3학년 과학 '생물의 한살이' — 배추흰나비를 기르고, 실험을 설계하고, 한살이를 비교하는 관찰·실험 농장 게임">
+<meta property="og:title" content="꼬물꼬물 한살이 농장">
+<meta property="og:description" content="배추흰나비 관찰 일지부터 씨앗 실험, 한살이 도감, 스마트 팜까지 — 3학년 과학 생물의 한살이">
+<meta property="og:image" content="assets/keyart.jpg">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar" id="topbar" hidden>
+  <div class="wrap">
+    <button class="brand" id="go-map" aria-label="농장 지도로 가기"><span class="t">꼬물꼬물 농장</span></button>
+    <span class="where" id="where"></span>
+    <span class="sp"></span>
+    <span class="stampbar" id="stampbar" aria-label="모은 도장"></span>
+    <button class="iconbtn" id="btn-notebook" aria-label="농장 일지 보기">일지</button>
+    <button class="iconbtn" id="btn-sound" aria-label="소리 켜고 끄기">소리</button>
+  </div>
+</header>
+<main id="view" tabindex="-1"></main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="modal" class="modal" hidden><div class="sheet" role="dialog" aria-modal="true"></div></div>
+<noscript><p style="padding:24px">이 게임은 자바스크립트가 켜져 있어야 실행돼요.</p></noscript>
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/draw.js"></script>
+<script src="js/butterfly.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/garden.js"></script>
+<script src="js/museum.js"></script>
+<script src="js/expo.js"></script>
+<script src="js/smart.js"></script>
+<script src="js/notebook.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
