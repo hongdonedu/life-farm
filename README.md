@@ -11,7 +11,7 @@
 - **농장 일지**(포트폴리오 인쇄) · **마무리 퀴즈** · **명예 농부 수료증** · **선생님 모드**(비밀번호 2022)
 
 ## 여는 방법
-- 인터넷: GitHub Pages 주소로 열기: https://hongdonmax.github.io/life-farm/
+- 인터넷: GitHub Pages 주소로 열기: https://hongdonedu.github.io/life-farm/
 - 내 컴퓨터: `index.html`을 더블클릭 (소개 카드 그림 저장만 웹 주소에서 돼요)
 
 ## 폴더
